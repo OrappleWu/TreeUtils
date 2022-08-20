@@ -6,9 +6,10 @@ So that you can use it this way！
 
 For Example：
 1.Define a class like this！
-
+```
 @Tree
 public class Menu {
+
     private String id;
 
     private String fatherId;
@@ -26,9 +27,9 @@ public class Menu {
         this.code = code;
     }
 }
-
+```
 2.If you have such a dataset, you can use this tool！
-
+```
 List<Menu> menuList = new ArrayList<>();  // dataset
 menuList.add(new Menu("1", null, "menu1", "menu1"));
 menuList.add(new Menu("2", null, "menu2", "menu2"));
@@ -38,8 +39,9 @@ menuList.add(new Menu("5", "2", "menu5", "menu5"));
 menuList.add(new Menu("6", "4", "menu6", "menu6"));
 
 TreeUtils.transferToTreeData(menuList);  // use tool
-
-   You can get the following data structure:
+```
+You can get the following data structure:
+```
    [
       {
         id:1,
@@ -78,12 +80,13 @@ TreeUtils.transferToTreeData(menuList);  // use tool
           children:[]
         }]
       }
-   ]
-   
-   
+   ] 
+```
+```
 TreeUtils.getTreeNodeDataList(menuList, 2)  // use tool
-
-  You can get the following data structure:
+```
+You can get the following data structure:
+```
   [
     {
       id:3,
@@ -107,10 +110,12 @@ TreeUtils.getTreeNodeDataList(menuList, 2)  // use tool
       children:[]
     }
   ]
-
+```
+```
 TreeUtils.getTreeNodeDataList(menuList, 2, "2")  // use tool
-
-    You can get the following data structure:
+```
+You can get the following data structure:
+```
       [
         {
           id:4,
@@ -127,13 +132,15 @@ TreeUtils.getTreeNodeDataList(menuList, 2, "2")  // use tool
           children:[]
         }
       ]
-      
+```
+```   
 TreeUtils.getTreeNodeDataLevel(menuList, "6")  // use tool
+```
 You can get the following data structure: 3 【表示id为6的菜单所处的树的节点级别为3】
 
 
 3.You can also define a class like this, which is supported by this tool！
-
+```
 @Tree(uniqueIdField = "mnId", fatherIdField = "pId", childListField = "childrenList")
 public class MenuNew {
     private String mnId;
@@ -153,9 +160,9 @@ public class MenuNew {
         this.code = code;
     }
 }
-
+```
 4.Related notes on 'Tree' annotation!
-
+```
 // 标识实体对象的那个属性为关联树结构的父ID
 String fatherIdField() default "fatherId";
 
@@ -170,3 +177,4 @@ String childListField() default "children";
 
 // 标识树节点的root值
 String fatherRootValue() default "";
+```
