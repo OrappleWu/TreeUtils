@@ -9,7 +9,6 @@ For Example：
 
 @Tree
 public class Menu {
-
     private String id;
 
     private String fatherId;
@@ -134,9 +133,9 @@ You can get the following data structure: 3 【表示id为6的菜单所处的树
 
 
 3.You can also define a class like this, which is supported by this tool！
+
 @Tree(uniqueIdField = "mnId", fatherIdField = "pId", childListField = "childrenList")
 public class MenuNew {
-
     private String mnId;
 
     private String pId;
