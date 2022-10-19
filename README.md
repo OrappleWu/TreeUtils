@@ -151,7 +151,7 @@ public class MenuNew {
 
     private String code;
 
-    private List<Menu> childrenList;
+    private List<MenuNew> childrenList;
 
     public MenuNew(String mnId, String pId, String name, String code) {
         this.mnId = mnId;
